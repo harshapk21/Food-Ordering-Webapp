@@ -1,0 +1,53 @@
+
+
+.name {
+    grid-area: img;
+    text-align: center;
+    background-color: orange;
+}
+
+.count {
+    grid-area: count;
+    text-align: center;
+    background-color: greenyellow;
+}
+
+.likes {
+    grid-area: likes;
+    text-align: center;
+    background-color: blueviolet;
+    
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    
+   
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 70% 30%;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: 
+    "img img"
+    "likes count";
+    border:1px solid green ;
+    margin:1em;
+}
+
+@media (max-width:600px){
+    .grid-container{
+        display: grid;
+        grid-template-columns: auto;
+    }
+}
+
+
+a {
+    text-decoration:none;
+    color:black
+}
+

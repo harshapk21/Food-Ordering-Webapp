@@ -1,12 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {Provider} from 'react-redux';
+import S from './Redux/mainStore';
+//import {persistedStore} from './Redux/mainStore';
+import { PersistGate } from 'redux-persist/integration/react';
 
+//console.log(S());
+const {store} = S();
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+   
+    <App/>
+
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
