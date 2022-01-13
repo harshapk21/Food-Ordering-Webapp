@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import {useEffect, useState} from 'react'; 
 import { setMenu, checkSubmitCart} from './../Redux/Actions/actionCreaters';
 import Counter from './Counter';
+import HandleDisplay from './HandleDisplay';
 
 
 function Menu(props){
@@ -66,24 +67,9 @@ function Menu(props){
 
     return (
         <div>
-            <table>
-            {menu.map(m=>(
-                <div>
-                <tr>
-                <td>{id}</td>
-                <td>{m.name}</td>
-                <td>{m.cost}</td>
-                <td>{m.count}</td>
-                <Counter name={m.name} />
-                </tr>
-                
-                </div>
-               
-            ))
-            }
-
-            </table>
-           <button onClick={()=>{ handleCart() }}> ADD TO CART </button>
+        <HandleDisplay items={menu}/>
+           
+        <button onClick={()=>{ handleCart() }}> ADD TO CART </button>
             
         </div>
     )
@@ -93,7 +79,7 @@ const mapStateToProps = (state)=>{
     console.log(state);
     return {
         hotel:state.hotelInAction,
-        counter:state.counter
+        
     }
 }
 

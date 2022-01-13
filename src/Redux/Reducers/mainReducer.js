@@ -128,7 +128,6 @@ let state = {
         },
 
     ],
-    counter:'0',
     hotelInAction:'',
     hotelId:'',
     itemsInCart:'',
@@ -149,20 +148,20 @@ export const mainReducer = (store=state,action)=>{
             hotelInAction:(store.menuOfRestaurants.filter(obj => { return obj.id==action.PAYLOAD }))[0].menu,
         }
        
-        case 'INC':
-            console.log(store.counter);
-            return{
+        case 'INC':return{
             ...store,
-            counter:(store.counter)+1,
             hotelInAction:store.hotelInAction
-            .map(obj => {if(obj.name==action.PAYLOAD)obj.count++; return obj;})
+            .map(obj => {
+                if(obj.name==action.PAYLOAD)obj.count++; return obj;})
             
         }
         case 'DEC':return{
             ...store,
-            counter:(store.counter>0)?((store.counter)-1):(store.counter),
             hotelInAction:store.hotelInAction
-            .map(obj => {if(obj.name==action.PAYLOAD && obj.count>0)obj.count--; return obj;})
+            .map(obj => {
+                if(obj.name==action.PAYLOAD && obj.count>0)
+                obj.count--; return obj;})
+           
         }
         case 'chk_sb_crt':return{
             ...store,

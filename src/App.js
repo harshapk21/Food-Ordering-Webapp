@@ -6,6 +6,7 @@ import Profile from "./components/Profile";
 import Home from "./components/Home";
 import Menu from "./components/Menu";
 import Auth from "./Screens/Auth";
+import Checkout from "./Screens/Checkout";
 
 
 function App() {
@@ -21,10 +22,12 @@ function App() {
         
           <Route path="/Cart" element={<Cart/> } />
           <Route path="/Profile" element={<Profile/>} />
-          <Route path="/Login" element={<Auth/>} />)
-          <Route path="/Home" element={<Home/>} />
+          <Route path="/Login" element={<Auth/>} />
+          
           <Route path="/Menu/:id" element={<Menu/>} />
-         
+          <Route path="/Cart/Checkout" element={<Checkout/>} />
+          <Route path="/" element={<Home/>} />
+          <Route path="/Home" element={<Home/>} />
         </Routes>
         </div>
         
